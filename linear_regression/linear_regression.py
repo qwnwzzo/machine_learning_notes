@@ -12,8 +12,8 @@ X = tf.placeholder(tf.float32)
 Y = tf.placeholder(tf.float32)
 w = tf.Variable(0.0, name="weights")
 
-cost = tf.square(Y-tf.multiply(X, w))
-train_op = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)
+lost = tf.square(Y-tf.multiply(X, w))
+train_op = tf.train.GradientDescentOptimizer(learning_rate).minimize(lost)
 
 sess = tf.Session()
 init = tf.global_variables_initializer()
